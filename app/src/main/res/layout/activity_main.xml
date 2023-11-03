@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="top"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textViewIntro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Добро пожаловать в приложение по расчету заработной платы и налогов \n Выберите способ расчета"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonFromGross"
+        android:onClick="onClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Прямой метод" />
+
+    <Button
+        android:id="@+id/buttonFomNet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Метод &quot;от обратного&quot;" />
+</LinearLayout>
