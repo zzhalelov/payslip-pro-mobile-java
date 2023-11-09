@@ -1,7 +1,7 @@
 package com.example.payslippro;
 
 public class FromGrossToNet {
-    public void calculateFromGrossToNet(){
-
+    public int calculateFromGrossToNet(int gross) {
+        return gross;
     }
 }
