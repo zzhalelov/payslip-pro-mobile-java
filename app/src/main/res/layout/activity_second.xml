@@ -25,13 +25,14 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="5dp"
         android:hint="Введи сумму"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:minHeight="48dp" />
 
-    <LinearLayout
+    <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
 
         <RadioButton
             android:id="@+id/radioButtonWithDeduction"
@@ -39,16 +40,17 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="clickButton"
+            android:checked="true"
             android:text="с вычетом" />
 
         <RadioButton
             android:id="@+id/radioButtonWithoutDeduction"
-            android:onClick="clickButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="clickButton"
             android:text="без вычета" />
-    </LinearLayout>
+    </RadioGroup>
 
     <Button
         android:id="@+id/button"
