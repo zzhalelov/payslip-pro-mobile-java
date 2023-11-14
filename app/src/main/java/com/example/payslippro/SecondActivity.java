@@ -12,10 +12,8 @@ import android.widget.TextView;
 public class SecondActivity extends AppCompatActivity {
     private EditText editTextGross;
     private TextView textViewResult;
-
     RadioButton radioButtonWithDeduction;
     RadioButton radioButtonWithoutDeduction;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,23 +27,38 @@ public class SecondActivity extends AppCompatActivity {
         radioButtonWithoutDeduction = findViewById(R.id.radioButtonWithoutDeduction);
         radioGroup.clearCheck();
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == R.id.radioButtonWithDeduction){
-                    textViewResult.setText("С вычетом");
-                } else if (checkedId == R.id.radioButtonWithoutDeduction) {
-                    textViewResult.setText("Без вычета");
-                }
+        radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
+            if (checkedId == R.id.radioButtonWithDeduction) {
+
+            } else if (checkedId == R.id.radioButtonWithoutDeduction) {
+
             }
         });
     }
 
     public void clickButton(View view) {
-        String grossStr = editTextGross.getText().toString();
-        int gross = Integer.parseInt(grossStr);
-        FromGrossToNetWithDeduction fromGrossToNetWithDeduction = new FromGrossToNetWithDeduction();
-        int result = fromGrossToNetWithDeduction.calculateFromGrossToNet(gross);
-        textViewResult.setText(result + "");
+        if (radioButtonWithDeduction.isChecked()) {
+            String grossStr = editTextGross.getText().toString();
+            if (grossStr.isEmpty()) {
+                textViewResult.setText("Ведите числовое значение");
+                textViewResult.setTextColor(0xFF800000);
+            } else {
+                int gross = Integer.parseInt(grossStr);
+                FromGrossToNetWithDeduction fromGrossToNetWithDeduction = new FromGrossToNetWithDeduction();
+                int result = fromGrossToNetWithDeduction.calculateFromGrossToNet(gross);
+                textViewResult.setText(result + " результат");
+            }
+        } else {
+            String grossStr = editTextGross.getText().toString();
+            if (grossStr.isEmpty()) {
+                textViewResult.setText("Ведите числовое значение");
+                textViewResult.setTextColor(0xFF800000);
+            } else {
+                int gross = Integer.parseInt(grossStr);
+                FromGrossToNetWithoutDeduction fromGrossToNetWithoutDeduction = new FromGrossToNetWithoutDeduction();
+                int result = fromGrossToNetWithoutDeduction.calculateFromGrossToNet(gross);
+                textViewResult.setText(result + "");
+            }
+        }
     }
 }
