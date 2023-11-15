@@ -38,7 +38,7 @@ public class ThirdActivity extends AppCompatActivity {
 
     public void clickButton(View view) {
         if (radioButtonWithDeduction.isChecked()) {
-            String grossStr = editTextGross.getText().toString();
+            String grossStr = editTextNet.getText().toString();
             if (grossStr.isEmpty()) {
                 textViewResult.setText("Ведите числовое значение");
                 textViewResult.setTextColor(0xFF800000);
@@ -49,7 +49,7 @@ public class ThirdActivity extends AppCompatActivity {
                 textViewResult.setText(result + " результат");
             }
         } else {
-            String grossStr = editTextGross.getText().toString();
+            String grossStr = editTextNet.getText().toString();
             if (grossStr.isEmpty()) {
                 textViewResult.setText("Ведите числовое значение");
                 textViewResult.setTextColor(0xFF800000);
