@@ -38,25 +38,25 @@ public class ThirdActivity extends AppCompatActivity {
 
     public void clickButton(View view) {
         if (radioButtonWithDeduction.isChecked()) {
-            String grossStr = editTextNet.getText().toString();
-            if (grossStr.isEmpty()) {
+            String netStr = editTextNet.getText().toString();
+            if (netStr.isEmpty()) {
                 textViewResult.setText("Ведите числовое значение");
                 textViewResult.setTextColor(0xFF800000);
             } else {
-                int gross = Integer.parseInt(grossStr);
-                FromGrossToNetWithDeduction fromGrossToNetWithDeduction = new FromGrossToNetWithDeduction();
-                int result = fromGrossToNetWithDeduction.calculateFromGrossToNet(gross);
+                int net = Integer.parseInt(netStr);
+                FromNetToGrossWithDeduction fromNetToGrossWithDeduction = new FromNetToGrossWithDeduction();
+                int result = fromNetToGrossWithDeduction.calculateFromNetToGross(net);
                 textViewResult.setText(result + " результат");
             }
         } else {
-            String grossStr = editTextNet.getText().toString();
-            if (grossStr.isEmpty()) {
+            String netStr = editTextNet.getText().toString();
+            if (netStr.isEmpty()) {
                 textViewResult.setText("Ведите числовое значение");
                 textViewResult.setTextColor(0xFF800000);
             } else {
-                int gross = Integer.parseInt(grossStr);
-                FromGrossToNetWithoutDeduction fromGrossToNetWithoutDeduction = new FromGrossToNetWithoutDeduction();
-                int result = fromGrossToNetWithoutDeduction.calculateFromGrossToNet(gross);
+                int gross = Integer.parseInt(netStr);
+                FromNetToGrossWithoutDeduction fromNetToGrossWithoutDeduction = new FromNetToGrossWithoutDeduction();
+                int result = fromNetToGrossWithoutDeduction.calculateFromNetToGross(gross);
                 textViewResult.setText(result + "");
             }
         }
