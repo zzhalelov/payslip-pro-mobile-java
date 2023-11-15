@@ -10,7 +10,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 public class ThirdActivity extends AppCompatActivity {
-    private EditText editTextGross;
+    private EditText editTextNet;
     private TextView textViewResult;
     RadioButton radioButtonWithDeduction;
     RadioButton radioButtonWithoutDeduction;
@@ -18,8 +18,8 @@ public class ThirdActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
-        editTextGross = findViewById(R.id.editTextGross);
+        setContentView(R.layout.activity_third);
+        editTextNet = findViewById(R.id.editTextGross);
         textViewResult = findViewById(R.id.textViewResult);
 
         RadioGroup radioGroup = findViewById(R.id.radioGroup);
