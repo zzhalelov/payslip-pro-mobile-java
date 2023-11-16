@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DCEC43"
     android:gravity="top"
     android:orientation="vertical"
     android:padding="16dp"
@@ -22,14 +23,16 @@
 
     <Button
         android:id="@+id/buttonFromGross"
-        android:onClick="onClick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#E91E63"
+        android:onClick="onClick"
         android:text="Прямой метод" />
 
     <Button
         android:id="@+id/buttonFomNet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#E91E63"
         android:text="Метод &quot;от обратного&quot;" />
 </LinearLayout>

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Payslip Pro</string>
+    <string name="insertGross">ВВЕДИТЕ СУММУ К НАЧИСЛЕНИЮ:</string>
+    <string name="hintInsertGross">Введи сумму</string>
 </resources>

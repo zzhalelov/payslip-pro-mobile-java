@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DCEC43"
     android:gravity="top"
     android:orientation="vertical"
     android:padding="8dp"
@@ -14,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="Введите сумму к начислению"
+        android:text="@string/insertGross"
         android:textAlignment="center"
         android:textSize="16dp"
         android:textStyle="bold" />
@@ -24,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="5dp"
-        android:hint="Введи сумму"
+        android:hint="@string/hintInsertGross"
         android:inputType="numberDecimal"
         android:minHeight="48dp" />
 
@@ -54,6 +55,7 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#E91E63"
         android:onClick="clickButton"
         android:text="Button" />
 
