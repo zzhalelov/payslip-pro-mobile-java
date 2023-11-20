@@ -73,18 +73,18 @@
         android:id="@+id/textViewOpv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="ОПВ: " />
 
     <TextView
         android:id="@+id/textViewVosms"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="ВОСМС: " />
 
     <TextView
         android:id="@+id/textViewIpn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="ИПН: " />
 
 </LinearLayout>
