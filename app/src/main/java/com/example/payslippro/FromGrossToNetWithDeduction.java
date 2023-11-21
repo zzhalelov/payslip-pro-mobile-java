@@ -24,4 +24,19 @@ public class FromGrossToNetWithDeduction extends FromGrossToNet {
         }
         return 0;
     }
+
+    @Override
+    public int calculateOpv(int gross) {
+        if (gross < 700000) {
+            double opv = gross * 0.1;
+            return (int) opv;
+        } else if (gross > 700000 & gross < 3500000) {
+            double opv = gross * 0.1;
+            return (int) opv;
+        } else if (gross > 3500000) {
+            double opv = 350000;
+            return (int) opv;
+        }
+        return 0;
+    }
 }

@@ -12,6 +12,9 @@ import android.widget.TextView;
 public class SecondActivity extends AppCompatActivity {
     private EditText editTextGross;
     private TextView textViewResult;
+    private TextView textViewOpv;
+    private TextView textViewVosms;
+    private TextView textViewIpn;
     RadioButton radioButtonWithDeduction;
     RadioButton radioButtonWithoutDeduction;
 
@@ -21,6 +24,9 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
         editTextGross = findViewById(R.id.editTextGross);
         textViewResult = findViewById(R.id.textViewResult);
+        textViewOpv = findViewById(R.id.textViewOpv);
+        textViewVosms = findViewById(R.id.textViewVosms);
+        textViewIpn = findViewById(R.id.textViewIpn);
 
         RadioGroup radioGroup = findViewById(R.id.radioGroup);
         radioButtonWithDeduction = findViewById(R.id.radioButtonWithDeduction);
@@ -46,7 +52,9 @@ public class SecondActivity extends AppCompatActivity {
                 int gross = Integer.parseInt(grossStr);
                 FromGrossToNetWithDeduction fromGrossToNetWithDeduction = new FromGrossToNetWithDeduction();
                 int result = fromGrossToNetWithDeduction.calculateFromGrossToNet(gross);
+                int opv = fromGrossToNetWithDeduction.calculateOpv(gross);
                 textViewResult.setText(result + " результат");
+                textViewOpv.setText(opv + "");
             }
         } else {
             String grossStr = editTextGross.getText().toString();

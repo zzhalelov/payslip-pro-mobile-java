@@ -71,18 +71,21 @@
 
     <TextView
         android:id="@+id/textViewOpv"
+        android:onClick="clickButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ОПВ: " />
 
     <TextView
         android:id="@+id/textViewVosms"
+        android:onClick="clickButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ВОСМС: " />
 
     <TextView
         android:id="@+id/textViewIpn"
+        android:onClick="clickButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ИПН: " />
