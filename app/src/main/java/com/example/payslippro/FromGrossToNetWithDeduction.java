@@ -39,4 +39,19 @@ public class FromGrossToNetWithDeduction extends FromGrossToNet {
         }
         return 0;
     }
+
+    @Override
+    public int calculateVosms(int gross) {
+        if (gross < 700000) {
+            double vosms = gross * 0.02;
+            return (int) vosms;
+        } else if (gross > 700000 & gross < 3500000) {
+            double vosms = 14000;
+            return (int) vosms;
+        } else if (gross > 3500000) {
+            double vosms = 14000;
+            return (int) vosms;
+        }
+        return 0;
+    }
 }
