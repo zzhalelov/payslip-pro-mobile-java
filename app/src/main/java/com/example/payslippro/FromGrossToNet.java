@@ -12,4 +12,8 @@ public class FromGrossToNet {
     public int calculateVosms(int gross) {
         return gross;
     }
+
+    public int calculateIpn(int gross) {
+        return gross;
+    }
 }

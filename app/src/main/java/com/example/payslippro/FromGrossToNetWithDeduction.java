@@ -54,4 +54,25 @@ public class FromGrossToNetWithDeduction extends FromGrossToNet {
         }
         return 0;
     }
+
+    @Override
+    public int calculateIpn(int gross) {
+        if (gross < 700000) {
+            double opv = gross * 0.1;
+            double vosms = gross * 0.02;
+            double ipn = (gross - opv - vosms - 48300) * 0.1;
+            return (int) ipn;
+        } else if (gross > 700000 & gross < 3500000) {
+            double opv = gross * 0.1;
+            double vosms = 14000;
+            double ipn = (gross - opv - vosms - 48300) * 0.1;
+            return (int) ipn;
+        } else if (gross > 3500000) {
+            double opv = 350000;
+            double vosms = 14000;
+            double ipn = (gross - opv - vosms - 48300) * 0.1;
+            return (int) ipn;
+        }
+        return 0;
+    }
 }

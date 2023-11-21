@@ -54,9 +54,11 @@ public class SecondActivity extends AppCompatActivity {
                 int result = fromGrossToNetWithDeduction.calculateFromGrossToNet(gross);
                 int opv = fromGrossToNetWithDeduction.calculateOpv(gross);
                 int vosms = fromGrossToNetWithDeduction.calculateVosms(gross);
+                int ipn = fromGrossToNetWithDeduction.calculateIpn(gross);
                 textViewResult.setText(result + " результат");
                 textViewOpv.setText(opv + "");
                 textViewVosms.setText(vosms + "");
+                textViewIpn.setText(ipn + "");
             }
         } else {
             String grossStr = editTextGross.getText().toString();
