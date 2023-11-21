@@ -56,9 +56,9 @@ public class SecondActivity extends AppCompatActivity {
                 int vosms = fromGrossToNetWithDeduction.calculateVosms(gross);
                 int ipn = fromGrossToNetWithDeduction.calculateIpn(gross);
                 textViewResult.setText(result + " результат");
-                textViewOpv.setText(opv + "");
-                textViewVosms.setText(vosms + "");
-                textViewIpn.setText(ipn + "");
+                textViewOpv.setText("ОПВ: " + opv);
+                textViewVosms.setText("ВОСМС: " + vosms);
+                textViewIpn.setText("ИПН: " + ipn);
             }
         } else {
             String grossStr = editTextGross.getText().toString();
@@ -69,7 +69,13 @@ public class SecondActivity extends AppCompatActivity {
                 int gross = Integer.parseInt(grossStr);
                 FromGrossToNetWithoutDeduction fromGrossToNetWithoutDeduction = new FromGrossToNetWithoutDeduction();
                 int result = fromGrossToNetWithoutDeduction.calculateFromGrossToNet(gross);
+                int opv = fromGrossToNetWithoutDeduction.calculateOpv(gross);
+                int vosms = fromGrossToNetWithoutDeduction.calculateVosms(gross);
+                int ipn = fromGrossToNetWithoutDeduction.calculateIpn(gross);
                 textViewResult.setText(result + "");
+                textViewOpv.setText("ОПВ: " + opv);
+                textViewVosms.setText("ВОСМС: " + vosms);
+                textViewIpn.setText("ИПН: " + ipn);
             }
         }
     }

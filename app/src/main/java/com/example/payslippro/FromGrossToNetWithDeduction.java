@@ -9,7 +9,7 @@ public class FromGrossToNetWithDeduction extends FromGrossToNet {
             double ipn = (gross - opv - vosms - 48300) * 0.1;
             double net = gross - opv - vosms - ipn;
             return (int) net;
-        } else if (gross > 700000 & gross < 3500000) {
+        } else if (gross >= 700000 & gross < 3500000) {
             double opv = gross * 0.1;
             double vosms = 14000;
             double ipn = (gross - opv - vosms - 48300) * 0.1;
@@ -30,7 +30,7 @@ public class FromGrossToNetWithDeduction extends FromGrossToNet {
         if (gross < 700000) {
             double opv = gross * 0.1;
             return (int) opv;
-        } else if (gross > 700000 & gross < 3500000) {
+        } else if (gross >= 700000 & gross < 3500000) {
             double opv = gross * 0.1;
             return (int) opv;
         } else if (gross > 3500000) {
@@ -45,7 +45,7 @@ public class FromGrossToNetWithDeduction extends FromGrossToNet {
         if (gross < 700000) {
             double vosms = gross * 0.02;
             return (int) vosms;
-        } else if (gross > 700000 & gross < 3500000) {
+        } else if (gross >= 700000 & gross < 3500000) {
             double vosms = 14000;
             return (int) vosms;
         } else if (gross > 3500000) {
@@ -62,7 +62,7 @@ public class FromGrossToNetWithDeduction extends FromGrossToNet {
             double vosms = gross * 0.02;
             double ipn = (gross - opv - vosms - 48300) * 0.1;
             return (int) ipn;
-        } else if (gross > 700000 & gross < 3500000) {
+        } else if (gross >= 700000 & gross < 3500000) {
             double opv = gross * 0.1;
             double vosms = 14000;
             double ipn = (gross - opv - vosms - 48300) * 0.1;
