@@ -12,6 +12,9 @@ import android.widget.TextView;
 public class ThirdActivity extends AppCompatActivity {
     private EditText editTextNet;
     private TextView textViewResult;
+    private TextView textViewOpv;
+    private TextView textViewVosms;
+    private TextView textViewIpn;
     RadioButton radioButtonWithDeduction;
     RadioButton radioButtonWithoutDeduction;
 
@@ -46,7 +49,13 @@ public class ThirdActivity extends AppCompatActivity {
                 int net = Integer.parseInt(netStr);
                 FromNetToGrossWithDeduction fromNetToGrossWithDeduction = new FromNetToGrossWithDeduction();
                 int result = fromNetToGrossWithDeduction.calculateFromNetToGross(net);
+                int opv = fromNetToGrossWithDeduction.calculateOpv(result);
+                int vosms = fromNetToGrossWithDeduction.calculateVosms(result);
+                int ipn = fromNetToGrossWithDeduction.calculateIpn(result);
                 textViewResult.setText(result + " результат");
+                textViewOpv.setText("ОПВ: " + opv);
+                textViewVosms.setText("ВОСМС: " + vosms);
+                textViewIpn.setText("ИПН: " + ipn);
             }
         } else {
             String netStr = editTextNet.getText().toString();
@@ -54,10 +63,16 @@ public class ThirdActivity extends AppCompatActivity {
                 textViewResult.setText("Ведите числовое значение");
                 textViewResult.setTextColor(0xFF800000);
             } else {
-                int gross = Integer.parseInt(netStr);
+                int net = Integer.parseInt(netStr);
                 FromNetToGrossWithoutDeduction fromNetToGrossWithoutDeduction = new FromNetToGrossWithoutDeduction();
-                int result = fromNetToGrossWithoutDeduction.calculateFromNetToGross(gross);
+                int result = fromNetToGrossWithoutDeduction.calculateFromNetToGross(net);
+                int opv = fromNetToGrossWithoutDeduction.calculateOpv(result);
+                int vosms = fromNetToGrossWithoutDeduction.calculateVosms(result);
+                int ipn = fromNetToGrossWithoutDeduction.calculateIpn(result);
                 textViewResult.setText(result + "");
+                textViewOpv.setText("ОПВ: " + opv);
+                textViewVosms.setText("ВОСМС: " + vosms);
+                textViewIpn.setText("ИПН: " + ipn);
             }
         }
     }
