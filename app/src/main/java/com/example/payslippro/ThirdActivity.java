@@ -24,6 +24,9 @@ public class ThirdActivity extends AppCompatActivity {
         setContentView(R.layout.activity_third);
         editTextNet = findViewById(R.id.editTextGross);
         textViewResult = findViewById(R.id.textViewResult);
+        textViewOpv = findViewById(R.id.textViewOpv);
+        textViewVosms = findViewById(R.id.textViewVosms);
+        textViewIpn = findViewById(R.id.textViewIpn);
 
         RadioGroup radioGroup = findViewById(R.id.radioGroup);
         radioButtonWithDeduction = findViewById(R.id.radioButtonWithDeduction);
