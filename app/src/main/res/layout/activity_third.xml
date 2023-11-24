@@ -53,11 +53,12 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:backgroundTint="#E91E63"
         android:onClick="clickButton"
-        android:text="Button" />
+        android:text="Рассчитать" />
 
     <TextView
         android:id="@+id/textViewResult"
@@ -71,22 +72,25 @@
 
     <TextView
         android:id="@+id/textViewOpv"
-        android:onClick="clickButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="clickButton"
         android:text="ОПВ: " />
 
     <TextView
         android:id="@+id/textViewVosms"
-        android:onClick="clickButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="clickButton"
         android:text="ВОСМС: " />
 
     <TextView
         android:id="@+id/textViewIpn"
-        android:onClick="clickButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="clickButton"
         android:text="ИПН: " />
 </LinearLayout>
