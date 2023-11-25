@@ -95,4 +95,13 @@
         android:gravity="center"
         android:onClick="clickButton"
         android:text="ИПН: " />
+
+    <Button
+        android:id="@+id/returnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#E91E63"
+        android:onClick="returnButton"
+        android:text="Вернуться на Главную" />
 </LinearLayout>
