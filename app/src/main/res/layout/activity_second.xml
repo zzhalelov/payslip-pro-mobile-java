@@ -25,6 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="5dp"
+        android:gravity="center"
         android:hint="@string/hintInsertGross"
         android:inputType="numberDecimal"
         android:minHeight="48dp" />
@@ -72,26 +73,26 @@
 
     <TextView
         android:id="@+id/textViewOpv"
-        android:onClick="clickButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:gravity="center"
+        android:onClick="clickButton"
         android:text="ОПВ: " />
 
     <TextView
         android:id="@+id/textViewVosms"
-        android:onClick="clickButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:onClick="clickButton"
         android:text="ВОСМС: " />
 
     <TextView
         android:id="@+id/textViewIpn"
-        android:onClick="clickButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:onClick="clickButton"
         android:text="ИПН: " />
-
 </LinearLayout>
