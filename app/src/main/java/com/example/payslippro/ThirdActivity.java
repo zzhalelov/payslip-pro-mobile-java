@@ -2,9 +2,12 @@ package com.example.payslippro;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -16,6 +19,7 @@ public class ThirdActivity extends AppCompatActivity {
     private TextView textViewOpv;
     private TextView textViewVosms;
     private TextView textViewIpn;
+    private Button button;
     RadioButton radioButtonWithDeduction;
     RadioButton radioButtonWithoutDeduction;
 
@@ -28,6 +32,7 @@ public class ThirdActivity extends AppCompatActivity {
         textViewOpv = findViewById(R.id.textViewOpv);
         textViewVosms = findViewById(R.id.textViewVosms);
         textViewIpn = findViewById(R.id.textViewIpn);
+        button = findViewById(R.id.button);
 
         RadioGroup radioGroup = findViewById(R.id.radioGroup);
         radioButtonWithDeduction = findViewById(R.id.radioButtonWithDeduction);
@@ -87,6 +92,8 @@ public class ThirdActivity extends AppCompatActivity {
                 }
             }
         }
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(button.getWindowToken(), 0);
     }
 
     public void returnButton(View view) {

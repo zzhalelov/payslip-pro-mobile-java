@@ -20,7 +20,7 @@ public class SecondActivity extends AppCompatActivity {
     private TextView textViewOpv;
     private TextView textViewVosms;
     private TextView textViewIpn;
-    Button button;
+    private Button button;
     RadioButton radioButtonWithDeduction;
     RadioButton radioButtonWithoutDeduction;
 
