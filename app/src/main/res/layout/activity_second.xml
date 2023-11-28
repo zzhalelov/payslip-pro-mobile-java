@@ -103,5 +103,6 @@
         android:layout_gravity="center"
         android:backgroundTint="#E91E63"
         android:onClick="returnButton"
+        android:layout_marginTop="50dp"
         android:text="Вернуться на Главную" />
 </LinearLayout>
