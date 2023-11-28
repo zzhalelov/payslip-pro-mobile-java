@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="Введите сумму на руки"
+        android:text="@string/insertNet"
         android:textAlignment="center"
         android:textSize="16dp"
         android:textStyle="bold" />

@@ -47,39 +47,48 @@ public class ThirdActivity extends AppCompatActivity {
         if (radioButtonWithDeduction.isChecked()) {
             String netStr = editTextNet.getText().toString();
             if (netStr.isEmpty()) {
-                textViewResult.setText("Ведите числовое значение");
+                textViewResult.setText("Введи числовое значение");
                 textViewResult.setTextColor(0xFF800000);
             } else {
-                int net = Integer.parseInt(netStr);
-                FromNetToGrossWithDeduction fromNetToGrossWithDeduction = new FromNetToGrossWithDeduction();
-                int result = fromNetToGrossWithDeduction.calculateFromNetToGross(net);
-                int opv = fromNetToGrossWithDeduction.calculateOpv(result);
-                int vosms = fromNetToGrossWithDeduction.calculateVosms(result);
-                int ipn = fromNetToGrossWithDeduction.calculateIpn(result);
-                textViewResult.setText(result + " результат");
-                textViewOpv.setText("ОПВ: " + opv);
-                textViewVosms.setText("ВОСМС: " + vosms);
-                textViewIpn.setText("ИПН: " + ipn);
+                if (!radioButtonWithDeduction.isChecked() && !radioButtonWithoutDeduction.isChecked()) {
+                    textViewResult.setText("Установи порядок применения стандартного вычета ИПН (с вычетом / без вычета)");
+                } else {
+                    int net = Integer.parseInt(netStr);
+                    FromNetToGrossWithDeduction fromNetToGrossWithDeduction = new FromNetToGrossWithDeduction();
+                    int result = fromNetToGrossWithDeduction.calculateFromNetToGross(net);
+                    int opv = fromNetToGrossWithDeduction.calculateOpv(result);
+                    int vosms = fromNetToGrossWithDeduction.calculateVosms(result);
+                    int ipn = fromNetToGrossWithDeduction.calculateIpn(result);
+                    textViewResult.setText("Сумма к начислению: " + result);
+                    textViewOpv.setText("ОПВ: " + opv);
+                    textViewVosms.setText("ВОСМС: " + vosms);
+                    textViewIpn.setText("ИПН: " + ipn);
+                }
             }
         } else {
             String netStr = editTextNet.getText().toString();
             if (netStr.isEmpty()) {
-                textViewResult.setText("Ведите числовое значение");
+                textViewResult.setText("Введи числовое значение");
                 textViewResult.setTextColor(0xFF800000);
             } else {
-                int net = Integer.parseInt(netStr);
-                FromNetToGrossWithoutDeduction fromNetToGrossWithoutDeduction = new FromNetToGrossWithoutDeduction();
-                int result = fromNetToGrossWithoutDeduction.calculateFromNetToGross(net);
-                int opv = fromNetToGrossWithoutDeduction.calculateOpv(result);
-                int vosms = fromNetToGrossWithoutDeduction.calculateVosms(result);
-                int ipn = fromNetToGrossWithoutDeduction.calculateIpn(result);
-                textViewResult.setText(result + "");
-                textViewOpv.setText("ОПВ: " + opv);
-                textViewVosms.setText("ВОСМС: " + vosms);
-                textViewIpn.setText("ИПН: " + ipn);
+                if (!radioButtonWithDeduction.isChecked() && !radioButtonWithoutDeduction.isChecked()) {
+                    textViewResult.setText("Установи порядок применения стандартного вычета ИПН (с вычетом / без вычета)");
+                } else {
+                    int net = Integer.parseInt(netStr);
+                    FromNetToGrossWithoutDeduction fromNetToGrossWithoutDeduction = new FromNetToGrossWithoutDeduction();
+                    int result = fromNetToGrossWithoutDeduction.calculateFromNetToGross(net);
+                    int opv = fromNetToGrossWithoutDeduction.calculateOpv(result);
+                    int vosms = fromNetToGrossWithoutDeduction.calculateVosms(result);
+                    int ipn = fromNetToGrossWithoutDeduction.calculateIpn(result);
+                    textViewResult.setText("Сумма к начислению: " + result);
+                    textViewOpv.setText("ОПВ: " + opv);
+                    textViewVosms.setText("ВОСМС: " + vosms);
+                    textViewIpn.setText("ИПН: " + ipn);
+                }
             }
         }
     }
+
     public void returnButton(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
