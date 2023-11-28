@@ -18,6 +18,7 @@
         android:text="@string/insertNet"
         android:textAlignment="center"
         android:textSize="16dp"
+        android:layout_marginTop="100dp"
         android:textStyle="bold" />
 
     <EditText
@@ -32,9 +33,10 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_gravity="center"
+        android:orientation="vertical">
 
         <RadioButton
             android:id="@+id/radioButtonWithDeduction"
@@ -59,7 +61,8 @@
         android:layout_gravity="center"
         android:backgroundTint="#E91E63"
         android:onClick="clickButton"
-        android:text="Рассчитать" />
+        android:text="Рассчитать"
+        app:cornerRadius="10dp" />
 
     <TextView
         android:id="@+id/textViewResult"
@@ -101,8 +104,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_marginTop="50dp"
         android:backgroundTint="#E91E63"
         android:onClick="returnButton"
-        android:layout_marginTop="50dp"
-        android:text="Вернуться на Главную" />
+        android:text="Вернуться на Главную"
+        app:cornerRadius="10dp" />
 </LinearLayout>

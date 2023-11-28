@@ -15,8 +15,8 @@
         android:id="@+id/textViewIntro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:padding="8dp"
-        android:layout_marginTop="50dp"
         android:text="@string/welcomeText"
         android:textAlignment="center"
         android:textSize="16dp"
@@ -31,7 +31,8 @@
         android:backgroundTint="#E91E63"
         android:onClick="onClickFirst"
         android:text="Прямой метод"
-        android:visibility="visible" />
+        android:visibility="visible"
+        app:cornerRadius="10dp" />
 
     <TextView
         android:id="@+id/textViewDescription1"
@@ -49,7 +50,8 @@
         android:layout_marginTop="50dp"
         android:backgroundTint="#E91E63"
         android:onClick="onClickSecond"
-        android:text="Метод &quot;от обратного&quot;" />
+        android:text="Метод &quot;от обратного&quot;"
+        app:cornerRadius="10dp" />
 
     <TextView
         android:id="@+id/textViewDescription2"
