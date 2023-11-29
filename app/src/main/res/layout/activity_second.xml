@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DCEC43"
+    android:background="#BEE8B3"
     android:gravity="top"
     android:orientation="vertical"
     android:padding="8dp"
@@ -14,11 +14,11 @@
         android:id="@+id/textViewIntro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:padding="8dp"
         android:text="@string/insertGross"
         android:textAlignment="center"
         android:textSize="16dp"
-        android:layout_marginTop="100dp"
         android:textStyle="bold" />
 
     <EditText

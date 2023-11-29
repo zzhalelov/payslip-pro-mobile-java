@@ -3,7 +3,7 @@
     <string name="insertGross">ВВЕДИ СУММУ К НАЧИСЛЕНИЮ:</string>
     <string name="insertNet">ВВЕДИ СУММУ НА РУКИ:</string>
     <string name="hintInsertGross">Введи сумму</string>
-    <string name="welcomeText">Добро пожаловать в приложение по расчету заработной платы и налогов \n Выберите способ расчета</string>
+    <string name="welcomeText">Добро пожаловать в приложение по расчету заработной платы и налогов \n \n Выбери способ расчета:</string>
     <string name="description1">Если известен оклад (с налогами). Необходимо узнать сумму к получению на "руки"</string>
     <string name="description2">Если из суммы полученной на руки необходимо рассчитать сумму с налогами (оклад)</string>
     <string name="resultOnHand">К получению на руки: </string>
