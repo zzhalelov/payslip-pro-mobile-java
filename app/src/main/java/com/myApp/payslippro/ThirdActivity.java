@@ -1,6 +1,5 @@
-package com.example.payslippro;
+package com.myApp.payslippro;
 
-import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -14,8 +13,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-public class SecondActivity extends AppCompatActivity {
-    private EditText editTextGross;
+public class ThirdActivity extends AppCompatActivity {
+    private EditText editTextNet;
     private TextView textViewResult;
     private TextView textViewOpv;
     private TextView textViewVosms;
@@ -27,8 +26,8 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
-        editTextGross = findViewById(R.id.editTextGross);
+        setContentView(R.layout.activity_third);
+        editTextNet = findViewById(R.id.editTextGross);
         textViewResult = findViewById(R.id.textViewResult);
         textViewOpv = findViewById(R.id.textViewOpv);
         textViewVosms = findViewById(R.id.textViewVosms);
@@ -51,42 +50,42 @@ public class SecondActivity extends AppCompatActivity {
 
     public void clickButton(View view) {
         if (radioButtonWithDeduction.isChecked()) {
-            String grossStr = editTextGross.getText().toString();
-            if (grossStr.isEmpty()) {
+            String netStr = editTextNet.getText().toString();
+            if (netStr.isEmpty()) {
                 textViewResult.setText("Введи числовое значение");
                 textViewResult.setTextColor(0xFF800000);
             } else {
                 if (!radioButtonWithDeduction.isChecked() && !radioButtonWithoutDeduction.isChecked()) {
                     textViewResult.setText("Установи порядок применения стандартного вычета ИПН (с вычетом / без вычета)");
                 } else {
-                    int gross = Integer.parseInt(grossStr);
-                    FromGrossToNetWithDeduction fromGrossToNetWithDeduction = new FromGrossToNetWithDeduction();
-                    int result = fromGrossToNetWithDeduction.calculateFromGrossToNet(gross);
-                    int opv = fromGrossToNetWithDeduction.calculateOpv(gross);
-                    int vosms = fromGrossToNetWithDeduction.calculateVosms(gross);
-                    int ipn = fromGrossToNetWithDeduction.calculateIpn(gross);
-                    textViewResult.setText("К получению на руки: " + result);
+                    int net = Integer.parseInt(netStr);
+                    FromNetToGrossWithDeduction fromNetToGrossWithDeduction = new FromNetToGrossWithDeduction();
+                    int result = fromNetToGrossWithDeduction.calculateFromNetToGross(net);
+                    int opv = fromNetToGrossWithDeduction.calculateOpv(result);
+                    int vosms = fromNetToGrossWithDeduction.calculateVosms(result);
+                    int ipn = fromNetToGrossWithDeduction.calculateIpn(result);
+                    textViewResult.setText("Сумма к начислению: " + result);
                     textViewOpv.setText("ОПВ: " + opv);
                     textViewVosms.setText("ВОСМС: " + vosms);
                     textViewIpn.setText("ИПН: " + ipn);
                 }
             }
         } else {
-            String grossStr = editTextGross.getText().toString();
-            if (grossStr.isEmpty()) {
+            String netStr = editTextNet.getText().toString();
+            if (netStr.isEmpty()) {
                 textViewResult.setText("Введи числовое значение");
                 textViewResult.setTextColor(0xFF800000);
             } else {
                 if (!radioButtonWithDeduction.isChecked() && !radioButtonWithoutDeduction.isChecked()) {
                     textViewResult.setText("Установи порядок применения стандартного вычета ИПН (с вычетом / без вычета)");
                 } else {
-                    int gross = Integer.parseInt(grossStr);
-                    FromGrossToNetWithoutDeduction fromGrossToNetWithoutDeduction = new FromGrossToNetWithoutDeduction();
-                    int result = fromGrossToNetWithoutDeduction.calculateFromGrossToNet(gross);
-                    int opv = fromGrossToNetWithoutDeduction.calculateOpv(gross);
-                    int vosms = fromGrossToNetWithoutDeduction.calculateVosms(gross);
-                    int ipn = fromGrossToNetWithoutDeduction.calculateIpn(gross);
-                    textViewResult.setText("К получению на руки: " + result);
+                    int net = Integer.parseInt(netStr);
+                    FromNetToGrossWithoutDeduction fromNetToGrossWithoutDeduction = new FromNetToGrossWithoutDeduction();
+                    int result = fromNetToGrossWithoutDeduction.calculateFromNetToGross(net);
+                    int opv = fromNetToGrossWithoutDeduction.calculateOpv(result);
+                    int vosms = fromNetToGrossWithoutDeduction.calculateVosms(result);
+                    int ipn = fromNetToGrossWithoutDeduction.calculateIpn(result);
+                    textViewResult.setText("Сумма к начислению: " + result);
                     textViewOpv.setText("ОПВ: " + opv);
                     textViewVosms.setText("ВОСМС: " + vosms);
                     textViewIpn.setText("ИПН: " + ipn);

@@ -1,38 +1,23 @@
-package com.example.payslippro;
+package com.myApp.payslippro;
 
-public class FromGrossToNetWithDeduction extends FromGrossToNet {
+public class FromNetToGrossWithDeduction extends FromNetToGross {
     @Override
-    public int calculateFromGrossToNet(int gross) {
-        if (gross < 54900) {
-            double opv = gross * 0.1;
-            double vosms = gross * 0.02;
-            double ipn = 0;
-            double net = gross - opv - vosms - ipn;
-            return (int) net;
-        } else if (gross < 86250) {
-            double opv = gross * 0.1;
-            double vosms = gross * 0.02;
-            double ipn = ((gross - opv - vosms - 48300) * 0.1) * 0.1;
-            double net = gross - opv - vosms - ipn;
-            return (int) net;
-        } else if (gross < 700000) {
-            double opv = gross * 0.1;
-            double vosms = gross * 0.02;
-            double ipn = (gross - opv - vosms - 48300) * 0.1;
-            double net = gross - opv - vosms - ipn;
-            return (int) net;
-        } else if (gross < 3500000) {
-            double opv = gross * 0.1;
-            double vosms = 14000;
-            double ipn = (gross - opv - vosms - 48300) * 0.1;
-            double net = gross - opv - vosms - ipn;
-            return (int) net;
-        } else if (gross > 3500000) {
-            double opv = 350000;
-            double vosms = 14000;
-            double ipn = (gross - opv - vosms - 48300) * 0.1;
-            double net = gross - opv - vosms - ipn;
-            return (int) net;
+    public int calculateFromNetToGross(int net) {
+        if (net <= 48300) {
+            double gross = net / 0.88;
+            return (int) gross;
+        } else if (net > 48300 & net <= 75624) {
+            double gross = (net - 483) / 0.8712;
+            return (int) gross;
+        } else if (net > 75624 & net <= 559230) {
+            double gross = (net - 4830) / 0.792;
+            return (int) gross;
+        } else if ((net > 559230 & net <= 2827230)) {
+            double gross = (net + 7770) / 0.81;
+            return (int) gross;
+        } else if (net > 2827230) {
+            double gross = (net + 322770) / 0.9;
+            return (int) gross;
         }
         return 0;
     }
@@ -42,11 +27,10 @@ public class FromGrossToNetWithDeduction extends FromGrossToNet {
         if (gross < 3500000) {
             double opv = gross * 0.1;
             return (int) opv;
-        } else if (gross > 3500000) {
+        } else {
             double opv = 350000;
             return (int) opv;
         }
-        return 0;
     }
 
     @Override
@@ -54,11 +38,10 @@ public class FromGrossToNetWithDeduction extends FromGrossToNet {
         if (gross < 700000) {
             double vosms = gross * 0.02;
             return (int) vosms;
-        } else if (gross > 700000) {
+        } else {
             double vosms = 14000;
             return (int) vosms;
         }
-        return 0;
     }
 
     @Override

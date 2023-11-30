@@ -1,4 +1,4 @@
-package com.example.payslippro;
+package com.myApp.payslippro;
 
 public class FromNetToGross {
     public int calculateFromNetToGross(int net){

@@ -1,4 +1,4 @@
-package com.example.payslippro;
+package com.myApp.payslippro;
 
 import androidx.appcompat.app.AppCompatActivity;
 

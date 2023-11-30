@@ -1,4 +1,4 @@
-package com.example.payslippro;
+package com.myApp.payslippro;
 
 public class FromNetToGrossWithoutDeduction extends FromNetToGross {
     @Override
