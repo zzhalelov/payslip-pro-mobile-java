@@ -13,6 +13,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import java.util.Locale;
+
 public class SecondActivity extends AppCompatActivity {
     private EditText editTextGross;
     private TextView textViewResult;
@@ -64,10 +66,14 @@ public class SecondActivity extends AppCompatActivity {
                     int opv = fromGrossToNetWithDeduction.calculateOpv(gross);
                     int vosms = fromGrossToNetWithDeduction.calculateVosms(gross);
                     int ipn = fromGrossToNetWithDeduction.calculateIpn(gross);
-                    textViewResult.setText("К получению на руки: " + result);
-                    textViewOpv.setText("ОПВ: " + opv);
-                    textViewVosms.setText("ВОСМС: " + vosms);
-                    textViewIpn.setText("ИПН: " + ipn);
+                    String resultStr = String.format(Locale.CANADA_FRENCH, "%,d", result);
+                    String opvStr = String.format(Locale.CANADA_FRENCH, "%,d", opv);
+                    String vosmsStr = String.format(Locale.CANADA_FRENCH, "%,d", vosms);
+                    String ipnStr = String.format(Locale.CANADA_FRENCH, "%,d", ipn);
+                    textViewResult.setText("К получению на руки: " + resultStr);
+                    textViewOpv.setText("ОПВ: " + opvStr);
+                    textViewVosms.setText("ВОСМС: " + vosmsStr);
+                    textViewIpn.setText("ИПН: " + ipnStr);
                 }
             }
         } else {
@@ -85,10 +91,14 @@ public class SecondActivity extends AppCompatActivity {
                     int opv = fromGrossToNetWithoutDeduction.calculateOpv(gross);
                     int vosms = fromGrossToNetWithoutDeduction.calculateVosms(gross);
                     int ipn = fromGrossToNetWithoutDeduction.calculateIpn(gross);
-                    textViewResult.setText("К получению на руки: " + result);
-                    textViewOpv.setText("ОПВ: " + opv);
-                    textViewVosms.setText("ВОСМС: " + vosms);
-                    textViewIpn.setText("ИПН: " + ipn);
+                    String resultStr = String.format(Locale.CANADA_FRENCH, "%,d", result);
+                    String opvStr = String.format(Locale.CANADA_FRENCH, "%,d", opv);
+                    String vosmsStr = String.format(Locale.CANADA_FRENCH, "%,d", vosms);
+                    String ipnStr = String.format(Locale.CANADA_FRENCH, "%,d", ipn);
+                    textViewResult.setText("К получению на руки: " + resultStr);
+                    textViewOpv.setText("ОПВ: " + opvStr);
+                    textViewVosms.setText("ВОСМС: " + vosmsStr);
+                    textViewIpn.setText("ИПН: " + ipnStr);
                 }
             }
         }
