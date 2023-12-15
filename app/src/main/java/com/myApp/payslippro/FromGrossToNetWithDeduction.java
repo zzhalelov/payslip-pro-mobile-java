@@ -54,11 +54,10 @@ public class FromGrossToNetWithDeduction extends FromGrossToNet {
         if (gross < 700000) {
             double vosms = gross * 0.02;
             return (int) vosms;
-        } else if (gross > 700000) {
+        } else {
             double vosms = 14000;
             return (int) vosms;
         }
-        return 0;
     }
 
     @Override
