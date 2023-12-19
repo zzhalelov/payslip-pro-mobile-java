@@ -8,4 +8,12 @@
     <string name="description2">Если из суммы полученной на руки необходимо рассчитать сумму с налогами (оклад)</string>
     <string name="resultOnHand">К получению на руки: </string>
     <string name="nonResident">Нерезидент</string>
+    <string-array name="spinnerEntries">
+        <item>Стандартный расчет</item>
+        <item>Пенсионер</item>
+        <item>Получатель ОППВ</item>
+        <item>Студент</item>
+        <item>Инвалид</item>
+        <item>Многодетная мать</item>
+    </string-array>
 </resources>
