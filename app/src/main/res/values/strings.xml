@@ -7,4 +7,5 @@
     <string name="description1">Если известен оклад (с налогами). Необходимо узнать сумму к получению на "руки"</string>
     <string name="description2">Если из суммы полученной на руки необходимо рассчитать сумму с налогами (оклад)</string>
     <string name="resultOnHand">К получению на руки: </string>
+    <string name="nonResident">Нерезидент</string>
 </resources>
