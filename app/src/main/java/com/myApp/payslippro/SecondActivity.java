@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.Locale;
@@ -24,6 +25,7 @@ public class SecondActivity extends AppCompatActivity {
     private Button button;
     RadioButton radioButtonWithDeduction;
     RadioButton radioButtonWithoutDeduction;
+    Spinner spinnerResident;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class SecondActivity extends AppCompatActivity {
         textViewVosms = findViewById(R.id.textViewVosms);
         textViewIpn = findViewById(R.id.textViewIpn);
         button = findViewById(R.id.button);
+        spinnerResident = findViewById(R.id.spinnerResident);
 
         RadioGroup radioGroup = findViewById(R.id.radioGroup);
         radioButtonWithDeduction = findViewById(R.id.radioButtonWithDeduction);
